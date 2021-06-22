@@ -158,7 +158,7 @@ let popularSLider = new Swiper('.popular-slider__row', {
 		delay: 3000,
 		disableOnInteraction: false,
 	},*/
-	
+
 	slidesPerGroup: 2,
 	observer: true,
 	observeParents: true,
@@ -183,19 +183,19 @@ let popularSLider = new Swiper('.popular-slider__row', {
 		nextEl: '.popular-slider__next',
 		prevEl: '.popular-slider__prev'
 	},
-	
+
 	breakpoints: {
 		320: {
 			slidesPerView: 2,
 		},
-		1281: {
+		1150: {
 			slidesPerView: 3,
 		},
 		1700: {
 			slidesPerView: 4,
 		},
 	},
-	
+
 	/*on: {
 		lazyImageReady: function () {
 			ibg();
@@ -229,12 +229,14 @@ let partnersSlider = new Swiper('.partners__slider', {
 	breakpoints: {
 		320: {
 			spaceBetween: 20,
+			slidesPerView: 1,
 		},
 		1200: {
 			spaceBetween: 100,
+			slidesPerView: 3,
 		},
 	},
-	
+
 	/*on: {
 		lazyImageReady: function () {
 			ibg();
@@ -245,6 +247,9 @@ let partnersSlider = new Swiper('.partners__slider', {
 	//	el: '.swiper-scrollbar',
 	//},
 });
+function email_test(input) {
+	return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
@@ -1429,7 +1434,7 @@ function inputs_init(inputs) {
 					//'+38(999) 999 9999'
 					//'+375(99)999-99-99'
 					input.classList.add('_mask');
-					Inputmask("+375 (99) 9999999", {
+					Inputmask("+7(999) 999 9999", {
 						//"placeholder": '',
 						clearIncomplete: true,
 						clearMaskOnLostFocus: true,

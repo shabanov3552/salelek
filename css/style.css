@@ -1416,6 +1416,7 @@ body.ie ._ibg img {
 @media (max-width: 939.98px) {
   .header__icon {
     z-index: 5;
+    width: 46px;
     display: block;
     position: relative;
     height: 32px;

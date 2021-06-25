@@ -63,11 +63,12 @@ if (sliderScrollItems.length > 0) {
 function sliders_bild_callback(params) { }
 
 let advantages__slider = new Swiper('.advantages__slider', {
-	effect: 'fade',
+	//effect: 'fade',
 	autoplay: {
 		delay: 3000,
 		disableOnInteraction: false,
 	},
+	speed: 800,
 	thumbs: {
 		// Свайпер с мениатюрами
 		// и его настройки
@@ -75,8 +76,8 @@ let advantages__slider = new Swiper('.advantages__slider', {
 			el: '.advantages__row',
 			slidesPerView: 6,
 			spaceBetween: 61,
-			simulateTouch: false,
-			//loop: true,
+			simulateTouch: true,
+			loop: true,
 			breakpoints: {
 				320: {
 					slidesPerView: 2,
@@ -94,8 +95,10 @@ let advantages__slider = new Swiper('.advantages__slider', {
 				},
 				1440: {
 					slidesPerView: 5,
+					loop: true,
 				},
 				1920: {
+					loop: false,
 					slidesPerView: 6,
 				},
 			},
@@ -1590,10 +1593,22 @@ function scroll_scroll() {
 	let src_value = currentScroll = pageYOffset;
 	let header = document.querySelector('header.header');
 	if (header !== null) {
-		if (src_value > 10) {
+		if (src_value > 100) {
 			header.classList.add('_scroll');
 		} else {
 			header.classList.remove('_scroll');
+		}
+	}
+	if ((window.location.pathname == '/index.html' || '/') && window.innerWidth > 767.98) {
+		let menu_right = document.querySelectorAll('.menu-right__btn');
+		if (src_value < window.innerHeight - 150) {
+			for (let index = 0; index < menu_right.length; index++) {
+				menu_right[index].classList.add('menu-right__btn_white');
+			}
+		} else {
+			for (let index = 0; index < menu_right.length; index++) {
+				menu_right[index].classList.remove('menu-right__btn_white');
+			}
 		}
 	}
 	if (scr_blocks.length > 0) {
@@ -2181,9 +2196,9 @@ da.init();
 window.addEventListener('resize', move);
 let subLink = document.querySelectorAll('.menu__sub-link');
 
-function move(){
+function move() {
 	const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-	if (viewport_width <= 940) {
+	if (viewport_width <= 939) {
 		for (let i = 0; i < subLink.length; i++) {
 			subLink[i].classList.remove('menu__sub-link');
 			subLink[i].classList.add('menu__link');
@@ -2197,3 +2212,31 @@ function move(){
 }
 
 move();
+//========================================================================================================================================================
+
+
+//Первый экран - высота хедера.
+const ro = new ResizeObserver(entries => {
+	for (let entry of entries) {
+		let height = entry.borderBoxSize[0].blockSize;
+		mainScreen.style.setProperty("--height-block", `${height}px`);
+	}
+})
+
+const headerHeight = document.querySelector('.header');
+const mainScreen = document.querySelector('.main-screen');
+ro.observe(headerHeight);
+//========================================================================================================================================================
+
+
+//автовысота для textarea
+var tx = document.getElementsByTagName('textarea');//РАСТЯГИВАЕМ_textarea
+for (var i = 0; i < tx.length; i++) {
+	tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+	tx[i].addEventListener("input", OnInput, false);
+}
+function OnInput() {
+	this.style.height = 'auto';
+	this.style.height = (this.scrollHeight) + 'px';//console.log(this.scrollHeight);
+}
+//========================================================================================================================================================

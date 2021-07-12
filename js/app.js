@@ -2336,7 +2336,8 @@ if (window.matchMedia('(max-width: 1280px)').matches) {
 function styleForIndex() {
 	let header = document.querySelector('.header');
 	let path = window.location.pathname;
-	if (path == '/') {
+	let mainScreen = document.querySelector('.main-screen');
+	if (mainScreen) {
 		header.classList.add('main-page');
 	}
 }

@@ -1016,7 +1016,7 @@ html._touch .btn3 {
   width: 0;
   height: 100%;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: -1;
   background-color: #141414;
   border-radius: 6px;
@@ -1030,7 +1030,6 @@ html._touch .btn3 {
 }
 
 .btn-15:hover::after {
-  left: 0;
   width: 100%;
 }
 
@@ -3526,6 +3525,15 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
   font-size: 14px;
   line-height: 14px;
   border-radius: 20px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.product__discount:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .product__add-basket {
@@ -3616,6 +3624,7 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
 
 .slider-product__image {
   min-height: 580px;
+  cursor: pointer;
 }
 
 .slider-product__image img {
@@ -3630,6 +3639,7 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
 }
 
 .slider-product__nav-image {
+  cursor: pointer;
   min-height: 100%;
 }
 
@@ -3783,6 +3793,9 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
 }
 
 .share__link {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
   margin: 0px 20px 0px 0px;
 }
 
@@ -3790,6 +3803,12 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+
+.share__link:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .share__link:hover path {

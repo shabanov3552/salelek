@@ -2270,7 +2270,7 @@ if (document.querySelector('.certificates__slider')) {
 
 function mapAdd() {
 	let tag = document.createElement('script');
-	tag.src = "https://maps.google.com/maps/api/js?key=AIzaSyDf4p3LffKDVRZJBYNqvV2DGVNVQwA1Mm4&callback=mapInit";
+	tag.src = "https://maps.google.com/maps/api/js?key=YOUR_API_KEY&callback=mapInit";
 	let firstScriptTag = document.getElementsByTagName('script')[0];
 	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }

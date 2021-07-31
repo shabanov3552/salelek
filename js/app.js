@@ -423,11 +423,11 @@ for (let index = 0; index < popups.length; index++) {
 }
 function popup_open(item, video = '') {
 	let activePopup = document.querySelectorAll('.popup._active');
-
 	if (activePopup.length > 0) {
 		popup_close('', false);
 	}
 	let curent_popup = document.querySelector('.popup_' + item);
+	let input_focus = curent_popup.querySelector('.input');
 	if (curent_popup && unlock) {
 		if (video != '' && video != null) {
 			let popup_video = document.querySelector('.popup_video');
@@ -436,10 +436,16 @@ function popup_open(item, video = '') {
 		if (!document.querySelector('.menu__body._active')) {
 			body_lock_add(500);
 		}
+
 		let menu = document.querySelector('.header');
 		curent_popup.classList.add('_active');
 		menu.classList.add('open');
 		history.pushState('', '', '#' + item);
+		if (input_focus) {
+			setTimeout(() => {
+				input_focus.focus();
+			}, 550);
+		}
 	}
 }
 function popup_close(item, bodyUnlock = true) {
@@ -2034,23 +2040,19 @@ if (document.querySelector('.advantages__slider')) {
 			swiper: {
 				el: '.advantages__row',
 				slidesPerView: 6,
-				spaceBetween: 61,
 				simulateTouch: true,
 				loop: true,
 				breakpoints: {
 					320: {
 						slidesPerView: 2,
-						spaceBetween: 40,
+						//spaceBetween: 20,
 					},
 					940: {
-						slidesPerView: 2.8,
-						spaceBetween: 61,
+						slidesPerView: 3,
+						spaceBetween: 20,
 					},
 					1280: {
 						slidesPerView: 4,
-					},
-					1366: {
-						slidesPerView: 4.2,
 					},
 					1440: {
 						slidesPerView: 5,
@@ -2587,7 +2589,7 @@ function move() {
 	let row = document.querySelector('.layout-row');
 	let col = document.querySelector('.layout-col ');
 	const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-	if (viewport_width <= 939) {
+	if (viewport_width <= 1099.93) {
 		for (let i = 0; i < subLink.length; i++) {
 			subLink[i].classList.remove('menu__sub-link');
 			subLink[i].classList.add('menu__link');
@@ -2899,3 +2901,13 @@ if (document.querySelectorAll('._img-parallax')) {
 };
 
 //========================================================================================================================================================
+//*очистка поля поиска
+
+if (document.querySelector('.modal-search__search-input')) {
+	const search__input = document.querySelector('.modal-search__search-input');
+	const search__clear = document.querySelector('.modal-search__clear');
+	search__clear.addEventListener("click", function (e) {
+		search__input.value = "";
+	});
+
+}

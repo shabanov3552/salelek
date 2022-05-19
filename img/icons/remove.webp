@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="19px" viewBox="0 0 15 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Полигон" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Страница" transform="translate(-1466.000000, -360.000000)" fill="#FF4268" fill-rule="nonzero">
+            <path d="M1481,362 L1481,363 C1481,363.776142 1480.79013,364 1480,364 L1467,364 C1466.20987,364 1466,363.776142 1466,363 L1466,362 C1466,362.223858 1466.20987,362 1467,362 L1471,362 L1471,361 C1470.6875,360.447715 1471.10723,360 1472,360 L1475,360 C1475.89277,360 1476.3125,360.447715 1476,361 L1476,362 L1480,362 C1480.79013,362 1481,362.223858 1481,362 Z M1468,377 C1467.87624,378.247435 1468.68802,379.002391 1469,379 L1478,379 C1478.33055,379.002391 1479.14233,378.247435 1479,377 L1480,366 L1467,366 L1468,377 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
